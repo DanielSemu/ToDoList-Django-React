@@ -44,7 +44,7 @@ createItem=()=>{
   this.setState({activeItem:item, modal: !this.state.modal})
 }
 editItem =item=>{
-  this.setState({activeItem:item, modal:!this.state.modal})
+  this.setState({activeItem:item,modal:!this.state.modal})
 }
 
 displayCompleted =status=>{
@@ -78,7 +78,7 @@ renderTabList=()=>{
 renderItems =()=>{
   const {viewCompleted} =this.state
   const newItems =this.state.todoList.filter(
-    item=>item.completed ===viewCompleted
+    item=>item.completed === viewCompleted
   )
   return newItems.map(item=>(
     <li key={item.id}
@@ -88,6 +88,7 @@ renderItems =()=>{
         {item.title}
       </span>
       <span>
+      {/* onClick={()=>this.toggle() */}
         <button onClick={() => this.editItem(item)} className='btn btn-info mx-2'>Edit</button>
         <button onClick={() => this.handelDelete(item)}  className='btn btn-danger mx-2'>Delete</button>
       </span>
@@ -117,7 +118,7 @@ render(){
       Copyright 2023 $copy; All Right Reserved
         </footer>
         {this.state.modal?(
-          <CustomModal activeItem={this.state.activeItem} toggle={this.toggl} onSave={this.handelSubmit}/>
+          <CustomModal activeItem={this.state.activeItem} toggle={this.toggle} onSave={this.handelSubmit}/>
         ):null}
     </main>
   )

@@ -61,6 +61,7 @@ render(){
                     type='checkbox'
                     name='completed'
                     value={this.state.activeItem.completed}
+                    checked={this.state.activeItem.completed}
                     onChange={this.handleChange}
                     />
                     <Label >Completed</Label>
